@@ -1,4 +1,3 @@
-// dart format width=80
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 // **************************************************************************
@@ -11,6 +10,7 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
+import 'package:integrator/application_entry.dart' as _i698;
 import 'package:integrator/core/utils/services/alert_handler/alert_handler_cubit.dart'
     as _i473;
 import 'package:integrator/core/utils/services/logger/logger.dart' as _i708;
@@ -29,6 +29,7 @@ _i174.GetIt $initGetIt(
     environmentFilter,
   );
   gh.factory<_i158.StepControllerCubit>(() => _i158.StepControllerCubit());
+  gh.factory<_i698.ApplicationEntry>(() => _i698.ApplicationEntry());
   gh.singleton<_i473.AlertHandlerCubit>(() => _i473.AlertHandlerCubit());
   gh.singleton<_i708.Logger>(() => _i708.Logger());
   return getIt;
