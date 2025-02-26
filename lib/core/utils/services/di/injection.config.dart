@@ -16,6 +16,12 @@ import 'package:integrator/core/utils/services/alert_handler/alert_handler_cubit
 import 'package:integrator/core/utils/services/logger/logger.dart' as _i708;
 import 'package:integrator/core/utils/step_builder/domain/step_controller_cubit.dart'
     as _i158;
+import 'package:integrator/module/base/data/data_sources/base_local_data_source.dart'
+    as _i649;
+import 'package:integrator/module/base/data/data_sources/config_local_data_sources.dart'
+    as _i214;
+
+const String _dev = 'dev';
 
 // initializes the registration of main-scope dependencies inside of GetIt
 _i174.GetIt $initGetIt(
@@ -28,9 +34,17 @@ _i174.GetIt $initGetIt(
     environment,
     environmentFilter,
   );
+  gh.factory<_i649.LocalDataSource>(
+    () => _i649.LocalDataSource(),
+    registerFor: {_dev},
+  );
   gh.factory<_i158.StepControllerCubit>(() => _i158.StepControllerCubit());
   gh.factory<_i698.ApplicationEntry>(() => _i698.ApplicationEntry());
   gh.singleton<_i473.AlertHandlerCubit>(() => _i473.AlertHandlerCubit());
   gh.singleton<_i708.Logger>(() => _i708.Logger());
+  gh.factory<_i214.ConfigLocalDataSource>(
+    () => _i214.ConfigLocalDataSource(),
+    registerFor: {_dev},
+  );
   return getIt;
 }
