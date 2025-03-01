@@ -1,3 +1,4 @@
+import 'dart:core';
 import 'package:injectable/injectable.dart';
 import 'package:integrator/module/base/data/data_sources/base_local_data_source.dart';
 
@@ -7,4 +8,15 @@ class ConfigLocalDataSource extends LocalDataSource {
 
   @override
   exec() async {}
+
+  Future<bool> getIntroSeenState() async {
+    final configBox = await openEncryptedBox<String?>(configurationBoxName);
+    if (configBox.get('seenState') == null) return false;
+    return configBox.get('seenState')! == 'true';
+  }
+
+  setIntroSeenState(bool seenState) async {
+    final configBox = await openEncryptedBox<String?>(configurationBoxName);
+    configBox.put('seenState', seenState ? 'true' : 'false');
+  }
 }

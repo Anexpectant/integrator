@@ -13,6 +13,7 @@ class Assets {
   // Animation-Directory  
 
   // Icons-Directory
+  static const String IC_SPLASH = "$BASE${ICONS}ic_splash$SVG";
 
   // Placeholders-Directory
 

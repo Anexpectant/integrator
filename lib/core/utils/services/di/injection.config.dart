@@ -20,6 +20,10 @@ import 'package:integrator/module/base/data/data_sources/base_local_data_source.
     as _i649;
 import 'package:integrator/module/base/data/data_sources/config_local_data_sources.dart'
     as _i214;
+import 'package:integrator/module/intro/presentation/intro_page.dart' as _i926;
+import 'package:integrator/module/main/presentation/main_page.dart' as _i293;
+import 'package:integrator/module/splash/domain/bloc/initializer_cubit.dart'
+    as _i392;
 
 const String _dev = 'dev';
 
@@ -38,8 +42,11 @@ _i174.GetIt $initGetIt(
     () => _i649.LocalDataSource(),
     registerFor: {_dev},
   );
+  gh.factory<_i293.MainPage>(() => _i293.MainPage());
+  gh.factory<_i926.IntroPage>(() => _i926.IntroPage());
   gh.factory<_i158.StepControllerCubit>(() => _i158.StepControllerCubit());
   gh.factory<_i698.ApplicationEntry>(() => _i698.ApplicationEntry());
+  gh.singleton<_i392.InitializerCubit>(() => _i392.InitializerCubit());
   gh.singleton<_i473.AlertHandlerCubit>(() => _i473.AlertHandlerCubit());
   gh.singleton<_i708.Logger>(() => _i708.Logger());
   gh.factory<_i214.ConfigLocalDataSource>(
