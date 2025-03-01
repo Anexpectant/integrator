@@ -34,6 +34,21 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
+  get_it: ^8.0.3
+  injectable_generator: ^2.6.2
+  injectable: ^2.5.0
+  oktoast: ^3.4.0
+  flutter_bloc: ^8.1.6
+  flutter_localization: ^0.3.1
+  intl: ^0.19.0
+  equatable: ^2.0.5
+  meta: ^1.12.0
+  bloc: ^8.1.4
+  hive_flutter: ^1.1.0
+  hive: ^2.2.3
+  hive_generator: ^2.0.1
+  flutter_secure_storage: ^4.2.1
+  flutter_svg: ^2.0.17
 
 dev_dependencies:
   flutter_test:
@@ -45,6 +60,8 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^5.0.0
+  build_runner: ^2.4.11
+  
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -56,6 +73,13 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+
+  assets:
+    - assets/
+    - assets/animations/
+    - assets/icons/
+    - assets/pictures/
+    - assets/place_holders/
 
   # To add assets to your application, add an assets section, like this:
   # assets:
@@ -73,17 +97,18 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
-  #         style: italic
-  #   - family: Trajan Pro
-  #     fonts:
-  #       - asset: fonts/TrajanPro.ttf
-  #       - asset: fonts/TrajanPro_Bold.ttf
-  #         weight: 700
+  fonts:
+    - family: iransans
+      fonts:
+        - asset: fonts/IRANSansX-Medium.ttf
+        - asset: fonts/IRANSansX-Bold.ttf
+          weight: 700
+        - asset: fonts/IRANSansX-Black.ttf
+          weight: 900
+    
+    - family: RubikMonoOne
+      fonts:
+        - asset: fonts/RubikMonoOne-Regular.ttf
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
