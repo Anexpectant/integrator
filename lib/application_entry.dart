@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:injectable/injectable.dart';
+import 'package:integrator/module/splash/domain/bloc/initializer_cubit.dart';
+import 'package:integrator/module/splash/presentation/pages/splash_page.dart';
 import 'package:oktoast/oktoast.dart';
 import 'package:integrator/core/styles/themes.dart';
 import 'package:integrator/core/utils/scroll_behavior/custom_scroll_behavior.dart';
@@ -22,7 +24,9 @@ class _ApplicationEntryState extends State<ApplicationEntry> {
     SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
 
     return MultiBlocProvider(
-        providers: [],
+        providers: [
+          BlocProvider.value(value: getIt<InitializerCubit>()),
+        ],
         child: MaterialApp(
           title: 'Integrator',
           onGenerateRoute: generateRoute,
@@ -44,7 +48,7 @@ class _ApplicationEntryState extends State<ApplicationEntry> {
               child: widget,
             );
           },
-          home: Container(),
+          home: SplashPage(),
         ));
   }
 }
